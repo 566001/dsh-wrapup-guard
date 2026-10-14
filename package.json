@@ -1,0 +1,61 @@
+{
+  "name": "dsh-wrapup-guard",
+  "version": "0.1.0",
+  "description": "收尾自检哨兵：AI 认为任务做完时调用 wrapup_check，插件自动跑测试/lint/audit，并强制「检查→修复→再检查」循环，直到连续三次全面检查零问题才判定收尾完成并弹通知。拦住「差不多可以了」。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client",
+    "tools",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "wrapup",
+    "self-check",
+    "quality-gate",
+    "收尾",
+    "自检"
+  ],
+  "author": "566001",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/566001/dsh-wrapup-guard.git"
+  },
+  "homepage": "https://github.com/566001/dsh-wrapup-guard#readme",
+  "bugs": {
+    "url": "https://github.com/566001/dsh-wrapup-guard/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check client/client.js"
+  },
+  "dsh": {
+    "category": "extension",
+    "displayName": "收尾哨兵",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh": ">=0.1.7-rc.2"
+  }
+}

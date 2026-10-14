@@ -1,0 +1,7 @@
+# dsh-wrapup-guard bundle patch: inserts the plugin row into the profile
+# roster. The host half registers the `wrapup_check` tool and runs the
+# command-class checks; the browser half (exports "./client") shows the
+# completion toast when the guard reaches its fixed point.
+- insert:
+    - id: dsh-wrapup-guard
+      name: 'dsh-wrapup-guard'
