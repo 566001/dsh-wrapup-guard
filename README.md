@@ -1,5 +1,11 @@
 # dsh-wrapup-guard · 收尾哨兵
 
+> **EN** — A DeepSeek Harness plugin that turns "task finished" into a gate:
+> it enforces a **check → fix → re-check** loop, auto-runs your command-class
+> checks, **blocks any round that still has unfixed problems**, and only calls
+> the task done after **three consecutive clean full checks** — then notifies the user.
+> Built to stop the "good enough" hand-off.
+
 一个 DeepSeek Harness 插件：**在任务收尾时强制「检查 → 修复 → 再检查」的循环，
 直到连续三次全面检查都没有发现问题，才判定收尾完成并通知用户。**
 
